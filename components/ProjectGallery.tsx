@@ -34,6 +34,17 @@ const projects: Project[] = [
     techStack: ['Unreal Engine', 'Blueprints', 'Simple AI'],
     accent: 'from-fuchsia-500/70 via-purple-500/60 to-indigo-500/60',
     demoUrl: 'https://solaraslight.itch.io/pingpong'
+  },
+  {
+    id: '4',
+    title: 'Canyon Salvo',
+    category: 'Game',
+    status: 'Released',
+    description:
+      'A short turn-based artillery duel across a canyon. Each turn, both sides place a missile launcher and a flare dispenser, then fire simultaneously, while the enemy AI adapts to your past placements.',
+    techStack: ['libGDX', 'Java', 'Turn-Based Strategy'],
+    accent: 'from-amber-600/70 via-orange-700/60 to-stone-600/60',
+    demoUrl: 'https://solaraslight.itch.io/canyon-salvo'
   }
 ];
 
