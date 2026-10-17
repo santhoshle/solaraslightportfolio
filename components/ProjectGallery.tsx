@@ -45,6 +45,16 @@ const projects: Project[] = [
     techStack: ['libGDX', 'Java', 'Turn-Based Strategy'],
     accent: 'from-amber-600/70 via-orange-700/60 to-stone-600/60',
     demoUrl: 'https://solaraslight.itch.io/canyon-salvo'
+  },
+  {
+    id: '5',
+    title: 'Untitled Endless Driving Game',
+    category: 'Game',
+    status: 'In Development',
+    description:
+      'An endless driving game with a cyber style, built for Android. Planned for release on the Google Play Store by the end of 2026.',
+    techStack: ['Unreal Engine', 'Blueprints', 'Android'],
+    accent: 'from-cyan-400/70 via-fuchsia-500/60 to-violet-700/60'
   }
 ];
 
@@ -111,7 +121,13 @@ const ProjectGallery: React.FC = () => {
                   <h4 className="text-lg font-bold text-white group-hover:text-solaras-accent transition-colors">
                     {project.title}
                   </h4>
-                  <span className="text-xs px-2 py-1 rounded-full border border-green-500 text-green-400 whitespace-nowrap">
+                  <span
+                    className={`text-xs px-2 py-1 rounded-full border whitespace-nowrap ${
+                      project.status === 'Released'
+                        ? 'border-green-500 text-green-400'
+                        : 'border-amber-500 text-amber-400'
+                    }`}
+                  >
                     {project.status}
                   </span>
                 </div>
@@ -128,14 +144,20 @@ const ProjectGallery: React.FC = () => {
                   ))}
                 </div>
 
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:border-solaras-accent hover:text-solaras-accent transition-colors"
-                >
-                  View on itch.io
-                </a>
+                {project.demoUrl ? (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center px-4 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:border-solaras-accent hover:text-solaras-accent transition-colors"
+                  >
+                    View on itch.io
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center justify-center px-4 py-3 bg-white/5 border border-white/10 text-gray-500 font-semibold rounded-lg cursor-default">
+                    Coming soon
+                  </span>
+                )}
               </div>
             </div>
           ))}
